@@ -1,0 +1,41 @@
+type ActiveEscrow @entity {
+  id: ID!
+  escrowContract: Bytes! # address
+  arbiter: Bytes! # address
+  depositor: Bytes! # address
+  amount: BigInt! # uint256
+  ownerUserName: String! # string
+  issueId: String! # string
+  repo: String! # string
+  url: String! # string
+}
+
+type EscrowCreated @entity {
+  id: ID!
+  escrowContract: Bytes! # address
+  arbiter: Bytes! # address
+  depositor: Bytes! # address
+  amount: BigInt! # uint256
+  ownerUserName: String! # string
+  issueId: String! # string
+  repo: String! # string
+  url: String! # string
+}
+
+type EscrowClosed @entity {
+  id: ID!
+  escrowContract: Bytes! # address
+  issueId: String! # string
+}
+
+type EscrowClosedAfterApprove @entity {
+  id: ID!
+  escrowContract: Bytes! # address
+  issueId: String! # string
+}
+
+type NewDeveloper @entity {
+  id: ID!
+  developer: Bytes! # address
+  loginName: String! # string
+}

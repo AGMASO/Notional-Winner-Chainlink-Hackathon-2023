@@ -1,0 +1,318 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "escrowContractAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "escrowContract",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "issueId",
+        "type": "string"
+      }
+    ],
+    "name": "EscrowClosed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "escrowContract",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "issueId",
+        "type": "string"
+      }
+    ],
+    "name": "EscrowClosedAfterApprove",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "escrowContract",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "arbiter",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "depositor",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "ownerUserName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "issueId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "repo",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "name": "EscrowCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "developer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "loginName",
+        "type": "string"
+      }
+    ],
+    "name": "NewDeveloper",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "escrowContractAddress",
+        "type": "address"
+      },
+      { "internalType": "address", "name": "beneficiary", "type": "address" }
+    ],
+    "name": "ApproveEscrow",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "Developers",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "developerAddress",
+        "type": "address"
+      },
+      { "internalType": "string", "name": "loginName", "type": "string" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "EscrowExists",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "Escrows",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "escrowContract",
+        "type": "address"
+      },
+      { "internalType": "string", "name": "ownerUserName", "type": "string" },
+      { "internalType": "string", "name": "issueId", "type": "string" },
+      { "internalType": "string", "name": "repo", "type": "string" },
+      { "internalType": "string", "name": "url", "type": "string" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "EscrowsIsEmpty",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_developer", "type": "address" },
+      { "internalType": "string", "name": "_loginName", "type": "string" }
+    ],
+    "name": "addDeveloper",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "consumerAddress",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_arbiter", "type": "address" },
+      { "internalType": "string", "name": "_ownerUserName", "type": "string" },
+      { "internalType": "string", "name": "_issueId", "type": "string" },
+      { "internalType": "string", "name": "_repo", "type": "string" },
+      { "internalType": "string", "name": "_url", "type": "string" }
+    ],
+    "name": "createEscrow",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "createEscrowPreset",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "escrowContractAddress",
+        "type": "address"
+      }
+    ],
+    "name": "deleteEscrowArray",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "escrowInitialized",
+    "outputs": [
+      { "internalType": "contract Escrow", "name": "", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getDevelopers",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "developerAddress",
+            "type": "address"
+          },
+          { "internalType": "string", "name": "loginName", "type": "string" }
+        ],
+        "internalType": "struct Main.Developer_info[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getEscrows",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "escrowContract",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "ownerUserName",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "issueId", "type": "string" },
+          { "internalType": "string", "name": "repo", "type": "string" },
+          { "internalType": "string", "name": "url", "type": "string" }
+        ],
+        "internalType": "struct Main.Escrow_info[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_contractAddress",
+        "type": "address"
+      }
+    ],
+    "name": "isEscrow",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_consumerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "setConsumerAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
